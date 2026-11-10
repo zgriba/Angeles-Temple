@@ -1,0 +1,71 @@
+<!-- 3D interior of the Pagoda (change the theme-... class based on Floors 0–5) -->
+ <div id="pagoda-interior" class="pagoda-interior theme-stone">
+    
+    <!-- 1. TOP NAVIGATION OF THE PAGODA -->
+    <nav class="dojo-top-bar">
+        <button id="btn-leave-dojo" class="chamber-back-btn">← Garden</button>
+
+        <!-- Drop-down Menus (Floors 0-5 and Rooms) -->
+        <div class="dojo-dropdowns">
+            <label for="floor-select">Floor:</label>
+            <select id="floor-select" class="imperial-select"></select>
+
+            <label for="chamber-select">Chamber:</label>
+            <select id="chamber-select" class="imperial-select"></select>
+        </div>
+
+        <!-- Current Floor Title -->
+        <h2 id="current-floor-title" class="dojo-floor-heading">⛰️ LEVEL 0: HTML5</h2>
+    </nav>
+
+    <!-- 2. STATE A: THE 3D ROOM ON THE FLOOR (Back Wall with Sliding Doors + Floor with Sensei’s Message) -->
+    <div id="dojo-hall-scene" class="dojo-hall-scene">
+
+        <!-- The Back Wall of the Floor (on which the Shoji Sliding Doors are positioned) -->
+        <div id="dojo-back-wall" class="dojo-back-wall">
+            <div id="shoji-doors-container" class="shoji-doors-container">
+                <!-- Here, dojo.js will build the sliding doors for the rooms on this floor -->
+            </div>
+        </div>
+
+        <!-- The 3D Floor Plan of the Level -->
+        <div id="dojo-floor" class="dojo-floor"></div>
+
+        <!-- Sensei's scroll placed on the floor (appears on mouse-hover over doors) -->
+        <div id="sensei-floor-scroll" class="sensei-floor-scroll">
+            <span class="sensei-seal">⛩️ SENSEI:</span>
+            <p id="sensei-message-text">Hover over any sliding door to inspect the technique behind it, or click a door to enter the Chamber.</p>
+        </div>
+    </div>
+
+    <!-- 3. STATE B: ROOM ARENA (Opens when we enter through a sliding door) -->
+    <div id="chamber-arena" class="chamber-arena hidden">
+
+        <!-- Left Panel: Theory, Percentage, and +0.5% Button -->
+        <div class="arena-scroll-panel">
+            <button id="btn-back-to-floor" class="chamber-back-btn">← Slide Door Closed (Back to Floor)</button>
+
+            <h3 id="arena-chamber-title">The 1st Chamber</h3>
+
+            <div class="arena-mastery-box">
+                <span>Mastery Level: <strong id="arena-mastery-value">4.0%</strong></span>
+                <button id="btn-train-chamber" class="train-btn">⚡ Practice (+0.5% Qi)</button>
+            </div>
+
+            <div class="arena-notes-box">
+                <h4>📜 Sacred Technique Notes:</h4>
+                <p id="arena-chamber-notes"></p>
+            </div>
+        </div>
+
+        <!-- Right Panel: Sandboxed Window (<iframe>) for live exercises in VS Code -->
+        <div class="arena-sandbox-panel">
+            <div class="sandbox-header">
+                <span>⚔️ LIVE TRAINING ARENA (Isolated Sandbox)</span>
+                <span id="sandbox-path-label">chamber</span>
+            </div>
+            <iframe id="arena-iframe" class="arena-iframe"
+            title="Chamber Live Training Sandbox"></iframe>
+        </div>
+    </div>
+ </div>

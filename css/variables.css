@@ -1,0 +1,62 @@
+/* Main colors */
+:root {
+    /* 1. Fonts (Tipografie) */
+    --font-title: 'Cinzel', Georgia, serif;
+    --font-scroll: 'Cormorant Garamond', Georgia, serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+
+    /* 2. Temple Core Colors */ 
+    --traditional-red: #a50b0b;
+    --banner-shadow: #420303;
+    --gold-ornaments: #d4af37;
+    --black-Kasagi: #161618;
+    --text-light: #f0f4f8;
+    --text-primary: #abaaa5;
+
+    /* 3. Sky & Sun */
+    --sky-top: #0f172a;
+    --sky-horizon: #526296;
+    --sun-top: hsl(37, 89%, 50%);
+    --sun-mid: hsl(10, 82%, 62%);
+    --sun-bottom: hsl(345, 45%, 48%);
+    --sun-glow: hsla(18, 90%, 62%, 0.45);
+
+    /* 4. Floor */
+    --floor-dark: #0a0a14;
+    --floor-horizon: #526296;
+
+    /* 5. Pagoda 6 Floors Atmospheres (Levels 0 - 5) */
+    --stone-top: #141c18;      --stone-bottom: #2c3e35;      --stone-glow: rgba(94, 158, 122, 0.35);
+    --water-top: #0b192c;      --water-bottom: #1e3e62;      --water-glow: rgba(56, 189, 248, 0.35);
+    --lightning-top: #1a1025;  --lightning-bottom: #3b2254;  --lightning-glow: rgba(234, 179, 8, 0.35);
+    --bronze-top: #1f1610;     --bronze-bottom: #4a3525;     --bronze-glow: rgba(217, 119, 6, 0.35);
+    --forge-top: #1f0d0d;      --forge-bottom: #4c1111;      --forge-glow: rgba(239, 68, 68, 0.4);
+    --cosmos-top: #090a10;     --cosmos-bottom: #1e1b4b;     --cosmos-glow: rgba(167, 139, 250, 0.4);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+}
+
+h1, h2, h3 {
+    text-decoration: none;
+}
+
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--floor-dark);
+}
+main {
+    height: 100vh; 
+    width: 100vw;
+    overflow: hidden; /* Crop anything that extends off-screen on the phone! */
+    perspective: 1000px;
+    position: relative;
+}
+
+
+

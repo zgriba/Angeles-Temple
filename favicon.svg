@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<!-- 1. Medallion background (Kasagi Black with a gold border) -->
+<rect x="2" y="2" width="60" height="60" rx="12" fill="#a1977a" stroke="#161618" stroke-width="4"/>
+
+<!-- 2. The two red pillars of the Torii Gate -->
+<rect x="18" y="18" width="6" height="36" fill="#a50b0b"/>
+<rect x="40" y="18" width="6" height="36" fill="#a50b0b"/>
+
+<!-- 3. Red horizontal beam (Nuki) -->
+<rect x="10" y="26" width="44" height="5" fill="#a50b0b"/>
+
+<!-- 4. The Imperial Curved Roof (Gold & Red Kasagi) -->
+<path d="M 6 14 Q 32 22 58 14 L 55 20 Q 32 27 9 20 Z" fill="#161618"/>
+</svg>

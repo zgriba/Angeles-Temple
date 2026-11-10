@@ -1,0 +1,175 @@
+
+.torii-svg {
+    width: 100%;
+    height: 100%;
+}
+.portal-trigger {
+    cursor: pointer;
+    outline: none;
+}
+.pillar {
+    fill: var(--traditional-red);
+    stroke: #111111;
+    stroke-width: 1px;
+}
+.pillar-base {
+    fill: var(--black-Kasagi);
+    stroke: #111111;
+    stroke-width: 1px;
+}
+.gold-ring {
+    fill: var(--gold-ornaments);
+
+}
+.temple-plaque {
+    fill: var(--black-Kasagi);
+    stroke: var(--gold-ornaments);
+    stroke-width: 1px;
+}
+.plaque-text {
+    fill: var(--gold-ornaments);
+    font-family: var(--font-title);
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+/* The sun will occupy 75% of the screen width, but with a minimum of 450px (phone) and a maximum of 1400px (4K) */
+.sun {
+    width: clamp(450px, 75vw, 1050px);
+    height: clamp(450px, 75vw, 1050px);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12vh; /* We use vh instead of -400px so that it always stays at the same depth on the horizon */
+    background: linear-gradient(to bottom, var(--sun-top) 0%, var(--sun-mid) 35%, var(--sun-bottom) 65%);
+    box-shadow: 0 0 14px 5px var(--sun-glow);
+    z-index: 3;
+}
+.sensei-card {
+    background: linear-gradient(
+        to bottom,
+        var(--banner-shadow) 0%,
+        var(--traditional-red) 20% 80%,
+        var(--banner-shadow) 100%);
+    padding: 16px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 3px solid var(--gold-ornaments);
+    border-right: 3px solid var(--gold-ornaments);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.6);
+    opacity: 0.9;
+    cursor: pointer;
+    transition: opacity 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    outline: none;
+}
+.sensei-card:hover, .sensei-card:focus {
+    opacity: 1;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.8), 0 0 5px var(--gold-ornaments);
+}
+
+.sensei-card h2 {
+    color:aliceblue;
+    font-size: 0.58rem;
+    line-height: 1.55;
+    text-align: justify;
+    text-justify: kashida;
+    font-family: var(--font-scroll);
+}
+.sensei-card::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    height: 8px;
+    background-color: var(--black-Kasagi);
+    border-left: 10px solid var(--gold-ornaments);
+    border-right: 10px solid var(--gold-ornaments);
+    border-radius: 3px;
+    top: -7px;
+}
+.sensei-card::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    height: 8px;
+    background-color: var(--black-Kasagi);
+    border-left: 10px solid var(--gold-ornaments);
+    border-right: 10px solid var(--gold-ornaments);
+    border-radius: 3px;
+    bottom: -7px;
+}
+#back-wall, .sun, #floor, .portal-trigger {
+    transition: filter 0.5s ease;
+}
+main:has(.sensei-card:focus) #back-wall,
+main:has(.sensei-card:focus) .sun,
+main:has(.sensei-card:focus) #floor,
+main:has(.sensei-card:focus) .portal-trigger {
+    filter: blur(8px) brightness(0.7);
+}
+main:has(.sensei-card:focus) .sensei-card:not(:focus) {
+    filter: blur(5px) brightness(0.6);
+    opacity: 0.5;
+}
+
+/* As we fly through the gate, the entrance fades smoothly into the mist */
+#torii-gate {
+    position: absolute;
+    bottom: 16vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    height: 650px;
+    width: 800px;
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease;
+    z-index: 10;
+}
+
+/* ================================================================
+ RESPONSIVE DESIGN (The "Water" Technique – Adapting to any screen)
+ =============================================================== */
+
+/* 1. Ultra-Wide / 2K / 4K Monitors (over 1800px wide) */
+@media (min-width: 1800px) {
+    #torii-gate {
+        transform: translateX(-50%) scale(1.12); 
+    }
+    .sun {
+        bottom: -25vh;
+    }
+}
+
+/* 2. Small Laptops and Tablets (under 900px wide) */
+@media (max-width: 900px) {
+    #torii-gate {
+        transform: translateX(-50%) scale(0.5); 
+        bottom: 16vh;
+    }
+    .sun {
+        bottom: -20vh;
+    }
+}
+
+/* 3. Narrow tablets / Large phones (under 650px wide) */
+@media (max-width: 750) {
+    #torii-gate {
+        transform: translateX(-50%) scale(0.5);
+        bottom: 14vh;
+    }
+    .sun {
+        bottom: -20vh;
+    }
+}
+/* 4. Standard smartphones (under 450px wide) */
+@media (max-width: 450px) {
+    #torii-gate {
+        transform: translateX(-50%) scale(0.4);
+        bottom: 15vh;
+    }
+    .sun {
+        bottom: 6vh;
+    }
+}

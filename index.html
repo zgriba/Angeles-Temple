@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My interactive 3D Portfolio">
+    <title>Angel's Portfolio</title>
+
+    <!-- Custom Coded SVG Torii Gate Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!--css styles variables-->
+    <link rel="stylesheet" href="css/variables.css">
+    <!--css styles layout-->
+    <link rel="stylesheet" href="css/layout.css">
+    <!--css styles components-->
+    <link rel="stylesheet" href="css/components.css">
+    <!--css styles garden-->
+    <link rel="stylesheet" href="css/garden.css">
+    <!--CSS styles for Dojo Pagoda-->
+    <link rel="stylesheet" href="css/dojo.css">
+
+
+
+    <!-- Google Fonts: Cinzel & Cormorant Garamond -->
+    <link rel="preconect" href="http://fonts.googleapis.com">
+    <link rel="preconect" href="http://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!--Navigation system ------------------------------------------------------------------------------>
+    <header>
+        <ul>
+            <li id="btn-outside" class="button">Outside Tori Gate</li>
+            <li id="btn-garden" class="button">Garden</li>
+        </ul>
+    </header>
+
+    <!--Portofolio content------------------------------------------------------------------------------>
+    <main>
+
+        <!--Back Wall-->
+        <section id="back-wall">
+            <!--The title "Angel's Temple" will be above the Tori Gate-->
+            <h1 class="sr-only">Angel's Temple</h1>
+        </section>
+
+        <!--Constructing the Sun in HSL as it sinks into the "Ocean"-->
+        <div class="sun"></div>
+
+        <!--Tori Gate-->
+        <section id="torii-gate">
+
+            <!--The portal trigger-->
+            <div class="portal-trigger" tabindex="0">
+
+                <svg aria-hidden="true" class="torii-svg" viewBox="0 0 800 600">
+                    <!--Lower Horizontal Beam (Nuki) and Gold Ends-->
+                    <!--Red Transverse Beam-->
+                    <rect class="pillar" x="80" y="200" width="640" height="42"/>
+                    <!--The gold ornament at the ends of the Left beam-->
+                    <rect class="gold-ring" x="80" y="200" width="30" height="42"/>
+                    <!--The gold ornament at the ends of the Right beam-->
+                    <rect class="gold-ring" x="690" y="200" width="30" height="42"/>
+
+                    <!--Left Pillar-->
+                    <rect class="pillar" x="180" y="120" width="55" height="480"/>
+                    <!--Right Pillar-->
+                    <rect class="pillar" x="565" y="120" width="55" height="480"/>
+
+                    <!--The stone sleeves Left at the base-->
+                    <rect class="pillar-base" rx="4" x="174" y="500" width="67" height="100"/>
+                    <!--The stone sleeves Right at the base-->
+                    <rect class="pillar-base" rx="4" x="559" y="500" width="67" height="100"/>
+
+                    <!--The ornaments above the black base Left-->
+                    <rect class="gold-ring" x="174" y="484" width="67" height="16"/>
+                    <!--The ornaments above the black base Right-->
+                    <rect class="gold-ring" x="559" y="484" width="67" height="16"/>
+
+                    <!--The Golden Rings atop the Left Pillar-->
+                    <rect class="gold-ring" rx="3" x="176" y="125" width="63" height="18"/>
+                    <!--The Golden Rings atop the Right Pillar-->
+                    <rect class="gold-ring" rx="3" x="561" y="125" width="63" height="18"/>
+
+                    <!--The Curved Roof (Kasagi)-->
+                    <!--The Red Lower Layer of the Roof (Shimaki)-->
+                    <path class="pillar" d="M 55 85 Q 400 145 745 85 L 725 130 Q 400 175 75 130 Z"/>
+                    <!--The Black Upper Layer of the Roof (Kasagi – the upward-curving top)-->
+                    <path class="pillar-base" d="M 25 45 Q 400 120 775 45 L 750 90 Q 400 150 50 90 Z"/>
+
+                    <!--Black Plaque with Gold Frame (Gakuzuka)-->
+                    <rect class="temple-plaque" x="280" y="130" width="240" height="80" rx="6"/>
+
+                    <!--The inscription "ANGEL'S TEMPLE" (<text>)-->
+                    <text class="plaque-text" x="400" y="178" text-anchor="middle">Angel's Temple</text>
+
+                </svg>
+            </div>
+            
+            <!--Left Kakejiku-->           
+                <div class="sensei-card banner-left" tabindex="0">
+                    <!--The Sensei mesage-->
+                    <h2>"Thirty-five chambers forge the mind: raw logic, iron syntax, and flowing style. Here, chaos yield to discipline-every line of cod is a strike practiced ten thousand times"</h2>
+                </div> 
+                <!--Right Kakejiku-->
+                <div class="sensei-card banner-right" tabindex="0">
+                    <!--The Sensei mesage to wallk in--> 
+                    <h2>"Enter the 36th Chamber of Code. Here, chaos bows to discipline, and raw logic is forged into digital steel. Fix your posture, every tag has a purpose."</h2>
+                </div>
+        </section>
+
+        <!--The Floor -->
+        <section id="floor"></section>
+        <!--The Temple's Garden-->
+        <section id="temple-garden"></section>
+        <!--The Pagoda Training Dojo (6 Floors & 36 Chambers)-->
+        <section id="temple-dojo"></section>
+            
+    </main>
+
+    <!--Autor, copy rights, contact details------------------------------------------------------------->
+    
+    <footer>
+        <p>© 2026 Angel's Temple. Erstellt von Angel Zgriba.</p>
+    </footer>
+    
+    <!-- Connecting JavaScript -->
+    <script src="js/main.js" defer></script>
+    <!-- Connecting Pagoda Dojo JavaScript -->
+    <script src="js/dojo.js" defer></script>
+</body>
+</html>

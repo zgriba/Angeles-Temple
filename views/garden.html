@@ -1,0 +1,61 @@
+<div class="garden-courtyard">
+    <!-- Garden Title -->
+    <div class="garden-header">
+        <h2>Inner Courtyard</h2>
+        <p>Select a pavilion to inspect the craft within</p>
+        <div id="temple-weather" class="weather-badge">
+            ⏳ Reading the winds of Heilbronn...
+        </div>
+    </div>
+
+    <!-- The 4 RPG Pavilions (Grid) -->
+    <div class="pavilions-grid">
+
+        <!-- 1. The Dojo (Skills) -->
+        <article class="pavilion-card" data-chamber="dojo">
+            <div class="pavilion-roof"></div>
+            <span class="pavilion-icon">🥋</span>
+            <h3>The Training Dojo</h3>
+            <p>Weapons of Code: HTML, CSS, JS, C# & SQL</p>
+        </article>
+
+        <!-- 2. Hall of Scrolls (Projects) -->
+        <article class="pavilion-card" data-chamber="scrolls">
+            <div class="pavilion-roof"></div>
+            <span class="pavilion-icon">📜</span>
+            <h3>Hall of Scrolls</h3>
+            <p>Forged Projects & Digital Architecture</p>
+        </article>
+
+        <!-- 3. Monk's Path (About me) -->
+        <article class="pavilion-card" data-chamber="monk">
+            <div class="pavilion-roof"></div>
+            <span class="pavilion-icon">🧘‍♂️</span>
+            <h3>The Monk's Path</h3>
+            <p>My Journey, Philosophy & Discipline</p>
+        </article>
+
+        <!-- 4. The Tea House (Contact) -->
+        <article class="pavilion-card" data-chamber="teahouse">
+            <div class="pavilion-roof"></div>
+            <span class="pavilion-icon">🍵</span>
+            <h3>The Tea House</h3>
+            <p>Ring the Temple Bell & Connect</p>
+        </article>
+    </div>
+</div>
+
+<!-- Interior View (opens when clicking on a Pavilion) -->
+<div id="chamber-modal" class="chamber-modal hidden">
+    <div class="pavilion-roof"></div>
+
+    <!-- Top bar of the Room, with the button to return to the courtyard -->
+    <div class="chamber-top bar">
+    <button id="btn-back-courtyard" class="chamber-back-btn">← Back to Courtyard</button>
+    <h2 id="chamber-title">Chamber Title</h2>
+    </div>
+
+    <!-- Here, JavaScript will inject the Live Table, the Sutra of the Day, or your Weapons! -->
+    <div id="chamber-body" class="chamber-body">
+    </div>
+</div>

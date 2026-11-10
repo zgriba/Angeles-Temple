@@ -1,0 +1,54 @@
+{
+    "pagodaFloors": [
+
+        { "floorId": 1, "floorNumber": 0, "weaponName": "HTML5", "shaolinPractice": "⛰️ Zhan Zhuang (Pillar Posture)", "floorTheme": "theme-stone" },
+        { "floorId": 2, "floorNumber": 1, "weaponName": "CSS3", "shaolinPractice": "🌊 Rou Quan (Fluid Water Fist)", "floorTheme": "theme-water" },
+        { "floorId": 3, "floorNumber": 2, "weaponName": "JavaScript", "shaolinPractice": "⚡ Qi Gong (Mastery of Internal Energy)", "floorTheme": "theme-lightning" },
+        { "floorId": 4, "floorNumber": 3, "weaponName": "SQL", "shaolinPractice": "📜 Cang Jing Ge (Sacred Archive of Sutras)", "floorTheme": "theme-bronze" },
+        { "floorId": 5, "floorNumber": 4, "weaponName": "C# (.NET)", "shaolinPractice": "🗡️ Bing Qi & Jin Gang (Steel Guardian)", "floorTheme": "theme-forge" },
+        { "floorId": 6, "floorNumber": 5, "weaponName": "Fullstack & Git", "shaolinPractice": "⛩️ Chan Wu Yi (Lighting Room 36)", "floorTheme": "theme-cosmos" }
+    ],
+    "dojoChambers": [
+        { "chamberId": 1, "chamberTitle": "Document Anatomy & Semantic Tags", "mastery": 4.0, "floorId": 1, "studyNotes": "Structure <!DOCTYPE html>, <head>, <header>, <main>, <section>, <footer>." },
+        { "chamberId": 2, "chamberTitle": "Text, Lists & Hyperlinks", "mastery": 3.0, "floorId": 1, "studyNotes": "Headings <h1>-<h6>, paragraphs <p>, lists <ul>/<li> and portals <a href target='_blank'>." },
+        { "chamberId": 3, "chamberTitle": "HTML Tables Architecture", "mastery": 2.0, "floorId": 1, "studyNotes": "Construction of tables: <table>, <thead>, <tbody>, <tr>, <th>, <td>." },
+        { "chamberId": 4, "chamberTitle": "Interactive Forms & Inputs", "mastery": 1.0, "floorId": 1, "studyNotes": "Collection of data from travelers: <form>, <input>, <select>, <button>." },
+        { "chamberId": 5, "chamberTitle": "SVG Vector Graphics & Focus", "mastery": 2.0, "floorId": 1, "studyNotes": "Drawing the Torii Gate from code with <svg viewBox>, <rect>, <path> and tabindex='0'." },
+
+        { "chamberId": 6, "chamberTitle": "Selectors, Variables & Pseudo-classes", "mastery": 3.0, "floorId": 2, "studyNotes": "Variables in :root (--var), selectors .class, #id, :hover, :focus, :has()." },
+        { "chamberId": 7, "chamberTitle": "Box Model & Spatial Positioning", "mastery": 3.0, "floorId": 2, "studyNotes": "Margin, padding, border, position (relative, absolute, fixed) and z-index layers." },
+        { "chamberId": 8, "chamberTitle": "Flexbox 1D Alignment", "mastery": 2.0, "floorId": 2, "studyNotes": "Alignment on an axis with display: flex, justify-content, align-items, gap." },
+        { "chamberId": 9, "chamberTitle": "CSS Grid 2D Architecture", "mastery": 1.0, "floorId": 2, "studyNotes": "2x2 architecture of display pavilions: grid and grid-template-columns." },
+        { "chamberId": 10, "chamberTitle": "Colors, Gradients & Mist Shadows", "mastery": 2.0, "floorId": 2, "studyNotes": "Atmosphere with rgba(), hsl(), linear-gradient, radial-gradient and box-shadow." },
+        { "chamberId": 11, "chamberTitle": "3D Perspective & Transitions", "mastery": 1.5, "floorId": 2, "studyNotes": "3D space with perspectives: 1000px, rotateX(), scale() and transition." },
+        { "chamberId": 12, "chamberTitle": "Responsive Water Technique", "mastery": 1.5, "floorId": 2, "studyNotes": "Adapting to any screen using vw, vh, clamp() and @media queries." },
+
+        { "chamberId": 13, "chamberTitle": "Variables, Data Types & Operators", "mastery": 2.5, "floorId": 3, "studyNotes": "Storage containers `const` and `let`, text strings, numbers, concatenation with `+`, and strict comparison `===`." },
+        { "chamberId": 14, "chamberTitle": "Functions, Parameters & Scope", "mastery": 2.0, "floorId": 3, "studyNotes": "The `function(ingredient)` declaration, arrow functions `() =>`, and the boundaries defined by curly braces `{ }`." },
+        { "chamberId": 15, "chamberTitle": "Conditional Logic (If / Else)", "mastery": 2.0, "floorId": 3, "studyNotes": "Branching paths using `if`, `else if`, and `else`, plus checking for existence with `if (element)`." },
+        { "chamberId": 16, "chamberTitle": "Arrays, Objects & forEach Loops", "mastery": 1.0, "floorId": 3, "studyNotes": "Lists `[ ]`, objects `{ }`, and the `.forEach()` and `.find()` methods for traversing data." },
+        { "chamberId": 17, "chamberTitle": "DOM Selection & Manipulation", "mastery": 2.5, "floorId": 3, "studyNotes": "Connecting elements using `querySelector`, `getElementById`, `.innerHTML`, `.classList`, and `createElement`." },
+        { "chamberId": 18, "chamberTitle": "Events & User Interaction", "mastery": 2.0, "floorId": 3, "studyNotes": "`addEventListener` handlers for clicks, `stopPropagation()`, and capturing user actions." },
+        { "chamberId": 19, "chamberTitle": "Async Fetch Falcon & JSON APIs", "mastery": 1.5, "floorId": 3, "studyNotes": "Asynchronous flight with fetch(url), .then(res => res.json()) and the safety net .catch()." },
+        { "chamberId": 20, "chamberTitle": "Browser & VS Code Debugging", "mastery": 3.0, "floorId": 3, "studyNotes": "Hunting errors in Console (TypeError null, ReferenceError) and Elements (Styles)." },
+
+        { "chamberId": 21, "chamberTitle": "Tables Architecture & Keys", "mastery": 2.0, "floorId": 4, "studyNotes": "CREATE TABLE, types INT, VARCHAR(n), DECIMAL(5,2), PRIMARY KEY and FOREIGN KEY." },
+        { "chamberId": 22, "chamberTitle": "Reading & Filtering Data (SELECT)", "mastery": 2.0, "floorId": 4, "studyNotes": "We extract data with SELECT, FROM, filter with WHERE and order with ORDER BY." },
+        { "chamberId": 23, "chamberTitle": "Modifying Data (Full CRUD)", "mastery": 1.0, "floorId": 4, "studyNotes": "We add with INSERT INTO, we increase mastery with UPDATE SET and we delete with DELETE FROM." },
+        { "chamberId": 24, "chamberTitle": "Relational Joins (INNER JOIN)", "mastery": 1.5, "floorId": 4, "studyNotes": "Joining two registers (Floors + Rooms) using the red thread ON PK = FK." },
+        { "chamberId": 25, "chamberTitle": "Aggregation & Grouping", "mastery": 0.0, "floorId": 4, "studyNotes": "Statistical calculation in SQL: COUNT(), SUM(), AVG() and grouping with GROUP BY." },
+        { "chamberId": 26, "chamberTitle": "Subqueries, Views & Security", "mastery": 0.0, "floorId": 4, "studyNotes": "Nested queries and protecting the vault against SQL Injection." },
+
+        { "chamberId": 27, "chamberTitle": "C# Syntax, Strong Types & Console", "mastery": 1.5, "floorId": 5, "studyNotes": "Int, double, string, bool armored drawers, class/Main and Console.WriteLine structure." },
+        { "chamberId": 28, "chamberTitle": "Control Flow & Loops in C#", "mastery": 1.0, "floorId": 5, "studyNotes": "Decisions if/else, switch and for, while, foreach loops in C#." },
+        { "chamberId": 29, "chamberTitle": "Methods, Parameters & Exceptions", "mastery": 0.0, "floorId": 5, "studyNotes": "Typed public/private methods, return and error handling with try / catch." },
+        { "chamberId": 30, "chamberTitle": "OOP Part 1: Classes & Objects", "mastery": 0.0, "floorId": 5, "studyNotes": "Construction of classes, objects, constructors and properties { get; set; }." },
+        { "chamberId": 31, "chamberTitle": "OOP Part 2: The 4 Pillars", "mastery": 0.0, "floorId": 5, "studyNotes": "Encapsulation, Inheritance (:), Polymorphism and Interfaces in C#." },
+        { "chamberId": 32, "chamberTitle": "Collections & LINQ Queries", "mastery": 0.0, "floorId": 5, "studyNotes": "Dynamic lists List<T> and query data directly from C# with LINQ." },
+        { "chamberId": 33, "chamberTitle": "ASP.NET Core Web API Guardian", "mastery": 0.0, "floorId": 5, "studyNotes": "Building the C# server that guards the SQL database and responds to the 'fetch()' Falcon." },
+
+        { "chamberId": 34, "chamberTitle": "Git & GitHub Version Control", "mastery": 0.0, "floorId": 6, "studyNotes": "Creating save points using git init, add, commit, and push, plus publishing to GitHub Pages." },
+        { "chamberId": 35, "chamberTitle": "Clean Architecture & Modular Code", "mastery": 1.5, "floorId": 6, "studyNotes": "Separating responsibilities across HTML, CSS, JS, SQL, and C# files." },
+        { "chamberId": 36, "chamberTitle": "The 36th Chamber: Fullstack & Hetzner", "mastery": 0.0, "floorId": 6, "studyNotes": "The ultimate fusion of JS, C#, and SQL, and deployment to a Hetzner server with a custom domain." }
+    ]
+}

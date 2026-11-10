@@ -1,0 +1,359 @@
+/* ==========================================================================
+   1. TRANZIȚIA DIN GRĂDINĂ ÎN CLĂDIREA PAGODEI (Ascundem exteriorul!)
+   ========================================================================== */
+
+#temple-dojo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 40; /* Above the Garden (25) and the Gate (10) */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+}
+
+/* When we enter the Dojo, the Pagoda becomes visible... */
+main.entered-dojo #temple-dojo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ...and the Garden, the Sun, and the menu outside disappear completely! */
+main.entered-dojo #temple-garden,
+main.entered-dojo #torii-gate,
+main.entered-dojo .sun,
+body:has(main.entered-dojo) header {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   2. THE 6 ATMOSPHERES OF THE FLOORS (Level 0 -> Floor 5)
+   ========================================================================== */
+.pagoda-interior {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* Level 0 (Ground Floor): HTML5 — Zhan Zhuang (Rock and Jade) */
+.theme-stone {
+    --wall-top: var(--stone-top);
+    --wall-bottom: var(--stone-bottom);
+    --floor-glow: var(--stone-glow);
+}
+
+/* Level 1: CSS3 — Rou Quan (Deep Blue Water) */
+.theme-water {
+    --wall-top: var(--wather-top);
+    --wall-bottom: var(--water-bottom);
+    --floor-glow: var(--water-glow);
+}
+
+/* Level 2: JavaScript — Qi Gong (Violet Storm and Golden Lightning) */
+.theme-lightning {
+    --wall-top: var(--lightning-top);
+    --wall-bottom: var(--lightning-bottom);
+    --floor-glow: var(--lightning-glow);
+}
+
+/* Level 3: SQL — Cang Jing Ge (Underground Vault of Bronze and Parchment) */
+.theme-bronze {
+    --wall-top: var(--bronze-top);
+    --wall-bottom: var(--bronze-bottom);
+    --floor-glow: var(--bronze-glow);
+}
+
+/* Level 4: C# (.NET) — Bing Qi (Forge of Steel and Fire) */
+.theme-forge {
+    --wall-top: var(--forge-top);
+    --wall-bottom: var(--forge-bottom);
+    --floor-glow: var(--forge-glow);
+}
+
+/* 5th Floor: Fullstack & Git — Chan Wu Yi (Cosmic Sky of the 36th Chamber) */
+.theme-cosmos {
+    --wall-top: var(--cosmos-top);
+    --wall-bottom: var(--cosmos-bottom);
+    --floor-glow: var(--cosmos-glow);
+}
+
+/* ==========================================================================
+   3. PAGODA TOP NAVIGATION (With Imperial Drop-Down Menus)
+   ========================================================================== */
+
+.dojo-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(14, 14, 18, 0.95);
+    border-bottom: 2px solid var(--gold-ornaments);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 110; /* Covers the old header when we are in the Pagoda! */
+}
+
+.dojo-dropdowns {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 0.9rem;
+}
+
+.imperial-select {
+    background: var(--black-Kasagi);
+    color: var(--text-light);
+    border: 1px solid var(--gold-ornaments);
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dojo-floor-heading {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: clamp(0.9rem, 1.8vw, 1.35rem);
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   4. 3D SCENE OF THE FLOOR (Back Wall + 3D Floor)
+   ========================================================================== */
+
+.dojo-hall-scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.dojo-back-wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--wall-top) 0%, var(--wall-bottom) 75%, #0a0a0f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12vh;
+    transition: background 0.6s ease;
+}
+
+.dojo-floor {
+    position: absolute;
+    bottom: 0;
+    left: -100vw;
+    width: 300vw;
+    height: 65vh;
+    transform-origin: bottom;
+    transform: rotateX(78deg);
+    background:
+        radial-gradient(ellipse at 50% 0%, var(--floor-glow) 0%, transparent 55%),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.3) 0px, rgba(0,0,0,0.3) 2px, transparent 2px, transparent 120px),
+        linear-gradient(to bottom, var(--wall-bottom) 0%, #0a0a0f 100%);
+        box-shadow: 0 -20px 50px 10px var(--wall-bottom);
+        z-index: 5;
+}
+
+/* ==========================================================================
+   5. PAGODA-STYLE SLIDING DOORS (Shoji Doors on the Back Wall)
+   ========================================================================== */
+
+.shoji-doors-container {
+    position: relative;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(14px, 2.2vw, 32px);
+    padding: 0 20px;
+    max-width: 95vw;
+    flex-wrap: wrap;
+}
+
+/* The wooden frame of a sliding door */
+.shoji-door {
+    width: clamp(115px, 11vw, 155px);
+    height: clamp(240px, 42vh, 340px);
+    background-color: rgba(235, 225, 205, 0.12); /* Rice paper in the shade */
+    border: 6px solid var(--black-Kasagi);
+    outline: 2px solid var(--gold-ornaments);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+
+    /* Traditional wooden lattice (Shoji Kumiko) drawn using CSS! */
+    background-image:
+        repeating-linear-gradient(0deg, rgba(22, 22, 24, 0.75) 0px, rgba(22, 22, 24, 0.75) 3px, transparent 3px, transparent 45px),
+        repeating-linear-gradient(90deg, rgba(22, 22, 24, 0.75) 0px, rgba(22, 22, 24, 0.75) 3px, transparent 3px, transparent 45px);
+}
+
+/* HOVER EFFECT: The door glows warmly from within and slides smoothly! */
+.shoji-door:hover {
+    background-color: rgba(255, 215, 130, 0.32); /* Warm lantern light behind the paper! */
+    transform: translateX(8px) translateY(-6px); /* Slides to the right and rises slightly */
+    box-shadow: -10px 15px 35px rgba(0, 0, 0, 0.9), 0 0 25px var(--gold-ornaments);
+}
+
+/* The plate at the top of the door (e.g., 1st Chamber) */
+.door-number-plaque {
+    background: var(--black-Kasagi);
+    border: 1px solid var(--gold-ornaments);
+    color: var(--gold-ornaments);
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    letter-spacing: 1px;
+}
+
+/* Short name of the Technique in the middle of the Door */
+.door-title {
+    background: rgba(16, 16, 20, 0.88);
+    color: var(--text-light);
+    font-family: var(--font-scroll);
+    font-size: 0.95rem;
+    padding: 8px 6px;
+    border-top: 1px solid var(--gold-ornaments);
+    border-bottom: 1px solid var(--gold-ornaments);
+}
+
+/* The bottom seal with the Mastery Percentage */
+.door-mastery-seal {
+    background: var(--traditional-red);
+    border: 1px solid var(--gold-ornaments);
+    color: aliceblue;
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   6. SENSEI’S SCROLL ON THE FLOOR (Down on the floor)
+   ========================================================================== */
+
+.sensei-floor-scroll {
+    position: absolute;
+    bottom: 85px; /* Just above the footer, placed on the 3D floor */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90vw, 850px);
+    background: linear-gradient(90deg, rgba(16, 16, 20, 0.95) 0%, rgba(45, 10, 10, 0.95) 50%, rgba(16, 16, 20, 0.95) 100%);
+    border-top: 2px solid var(--gold-ornaments);
+    border-bottom: 2px solid var(--gold-ornaments);
+    border-left: 8px solid var(--gold-ornaments);
+    border-right: 8px solid var(--gold-ornaments);
+    padding: 14px 20px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.sensei-seal {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+#sensei-message-text {
+    color: var(--text-light);
+    font-family: var(--font-scroll);
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   7. STATE B: ROOM ARENA (Left: Theory +0.5% | Right: <iframe> Window)
+   ========================================================================== */
+
+.chamber-arena {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(94vw, 1200px);
+    height: calc(100vh - 160px);
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr; /* Narrower on the left (Theory), wider on the right (Live Arena) */
+    gap: 24px;
+}
+
+.arena-scroll-panel, .arena-sandbox-panel {
+    background: rgba(16, 16, 20, 0.95);
+    border: 2px solid var(--gold-ornaments);
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--text-light);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.arena-mastery-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(165, 11, 11, 0.25);
+    border: 1px solid var(--gold-ornaments);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: var(--font-title);
+}
+
+.arena-notes-box {
+    font-family: var(--font-scroll);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.arena-notes-box h4 {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    margin-bottom: 8px;
+}
+
+/* The <iframe> Sandboxed Window for live exercises */
+.sandbox-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    padding-bottom: 8px;
+}
+
+.arena-iframe {
+    width: 100%;
+    flex: 1; /* Occupy all remaining space in the right-hand panel */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #111115;
+    border-radius: 4px;
+}
