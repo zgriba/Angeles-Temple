@@ -47,7 +47,7 @@
         { "chamberId": 32, "chamberTitle": "Collections & LINQ Queries", "mastery": 0.0, "floorId": 5, "studyNotes": "Dynamic lists List<T> and query data directly from C# with LINQ." },
         { "chamberId": 33, "chamberTitle": "ASP.NET Core Web API Guardian", "mastery": 0.0, "floorId": 5, "studyNotes": "Building the C# server that guards the SQL database and responds to the 'fetch()' Falcon." },
 
-        { "chamberId": 34, "chamberTitle": "Git & GitHub Version Control", "mastery": 0.0, "floorId": 6, "studyNotes": "Creating save points using git init, add, commit, and push, plus publishing to GitHub Pages." },
+        { "chamberId": 34, "chamberTitle": "Git & GitHub Version Control", "mastery": 1.0, "floorId": 6, "studyNotes": "Creating save points using git init, add, commit, and push, plus publishing to GitHub Pages." },
         { "chamberId": 35, "chamberTitle": "Clean Architecture & Modular Code", "mastery": 1.5, "floorId": 6, "studyNotes": "Separating responsibilities across HTML, CSS, JS, SQL, and C# files." },
         { "chamberId": 36, "chamberTitle": "The 36th Chamber: Fullstack & Hetzner", "mastery": 0.0, "floorId": 6, "studyNotes": "The ultimate fusion of JS, C#, and SQL, and deployment to a Hetzner server with a custom domain." }
     ]
