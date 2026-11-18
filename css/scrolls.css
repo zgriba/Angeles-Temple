@@ -1,0 +1,210 @@
+
+/*1. THE TRANSITION FROM THE GARDEN INTO THE "HALL OF SCROLLS" (Cang Jing Ge) BUILDING*/
+
+#temple-scrolls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.37s ease;
+}
+
+/* When we enter the Hall of Scrolls, the building becomes visible... */
+main.entered-scrolls #temple-scrolls {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ...and the Garden, the Gate, the Sun, and the old Header disappear completely! */
+main.entered-scrolls #temple-garden,
+main.entered-scrolls #torii-gate,
+main.entered-scrolls .sun,
+body:has(main.entered-scrolls) header {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scrolls-interior {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/*2. THE SWITCH FOR THE 2 WINGS ON THE TOP BAR*/
+.scrolls-wing-switcher {
+    display: flex;
+    gap: 12px;
+}
+
+.wing-btn {
+    background: var(--black-Kasagi);
+    color: var(--text-primary);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wing-btn:hover, .wing-btn.active-wing {
+    background: var(--traditional-red);
+    color: aliceblue;
+    border-color: var(--gold-ornaments);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+/*3. 3D SCENE OF THE LIBRARY (Wood & Bronze Wall + 3D Floor)*/
+.scrolls-back-wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--bronze-top) 0%, var(--bronze-bottom) 75%, #0a0a0f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vh;
+}
+
+.scrolls-floor {
+    position: absolute;
+    bottom: 0;
+    left: -100vw;
+    width: 300vw;
+    height: 65vh;
+    transform-origin: bottom;
+    transform: rotateX(78deg);
+    background: 
+        radial-gradient(ellipse at 50% 0%, var(--bronze-glow) 0%, transparent 55%),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.35) 0px, rgba(0,0,0,0.35) 2px, transparent 2px, transparent 120px),
+        linear-gradient(to bottom, var(--bronze-bottom) 0%, #0a0a0f 100%);
+    box-shadow: 0 -20px 50px 10px var(--bronze-bottom);
+    z-index: 5;
+}
+
+/*4. ARIPA 1: CELE 3 MARI SULURI IMPERIALE (Kakejiku Scrolls)*/
+.imperial-scrolls-container {
+    position: relative;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 3.5vw, 50px);
+    padding: 0 20px;
+    max-width: 95vw;
+    flex-wrap: wrap;
+}
+
+.kakejiku-scroll {
+    width: clamp(230px, 24vw, 290px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.kakejiku-scroll:hover {
+    transform: translateY(-10px) scale(1.03);
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.9));
+}
+
+/* The top and bottom cylindrical rods of the Scroll */
+.kakejiku-roller-top, .kakejiku-roller-bottom {
+    width: 106%;
+    height: 12px;
+    background-color: var(--black-Kasagi);
+    border-left: 14px solid var(--gold-ornaments);
+    border-right: 14px solid var(--gold-ornaments);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* The red silk and gold body of the Scroll */
+.kakejiku-body {
+    width: 100%;
+    min-height: 310px;
+    background: linear-gradient(180deg, var(--banner-shadow) 0%, rgba(165, 11, 11, 0.85) 20%, rgba(22, 22, 24, 0.95) 85%, var(--banner-shadow) 100%);
+    border-left: 3px solid var(--gold-ornaments);
+    border-right: 3px solid var(--gold-ornaments);
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
+}
+
+.scroll-seal {
+    background: var(--black-Kasagi);
+    border: 1px solid var(--gold-ornaments);
+    color: var(--gold-ornaments);
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    letter-spacing: 2px;
+}
+
+.kakejiku-body h3 {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+}
+
+.scroll-subtitle {
+    font-family: var(--font-scroll);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.scroll-tech {
+    font-family: var(--font-title);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 6px 0;
+    width: 100%;
+}
+
+.scroll-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/*5. WING 2: PANEL FOR THE GITHUB GLOBAL LEADERBOARD*/
+.world-registry-panel {
+    position: relative;
+    z-index: 15;
+    width: min(92vw, 880px);
+    background: rgba(16, 16, 20, 0.95);
+    border: 2px solid var(--gold-ornaments);
+    border-radius: 6px;
+    padding: 24px 28px;
+    color: var(--text-light);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+#scrolls-sensei-text {
+    color: var(--text-light);
+    font-family: var(--font-scroll);
+    font-size: 1.15rem;
+    font-style: italic;
+}

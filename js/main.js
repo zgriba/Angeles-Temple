@@ -21,7 +21,7 @@ function enterGarden() {
             .then(response => response.text())
             .then(data => {
                 gardenSection.innerHTML = data;
-                console.log("The Falcon has build the Garden!");
+                console.log("The Falcon has built the Garden!");
 
                 // As soon as the Garden is built, we summon the Weather Falcon!
                 fetchTempleWeather();
@@ -89,14 +89,17 @@ function setupGardenPavilions() {
                 return; // The "return" statement stops the function here, preventing it from opening the small modal!
             }
 
-            // For the other 3 Pavilions (Scrolls, Monk, Tea House), we open the window from the Garden:
+            // If we click on HALL OF SCROLLS, we enter the 3D Sacred Library directly!
+            if (chamberType === 'scrolls') {
+                enterHallOfScrolls();
+                return;
+            }
+
+            // For the other 2 Pavilions (Monk, Tea House), we open the window from the Garden:
             courtyard.classList.add('hidden'); // Hide the court with the 4 cards
             modal.classList.remove('hidden'); // Display the Indoor Camera
 
-            if (chamberType === 'scrolls') {
-                modalTitle.textContent = "📜 HALL OF SCROLLS - GLOBAL IT RANKINGS";
-                loadGitHubLeaderboard('csharp');
-            } else if (chamberType === 'monk') {
+            if (chamberType === 'monk') {
                 modalTitle.textContent = "🧘‍♂️ THE MONK'S PATH";
                 modalBody.innerHTML = "<p>Meditating on the Daily Sutra...</p>";
             } else if (chamberType === 'teahouse') {
@@ -113,67 +116,5 @@ function setupGardenPavilions() {
     });
 }
 
-// The function that builds the Live IT Ranking and updates it via the API
-function loadGitHubLeaderboard(language) {
-    const modalBody = document.getElementById('chamber-body');
 
-    // STEP A: Draw the category-switching buttons and the table skeleton
-    modalBody.innerHTML =
-    '<div class="table-controls">' + 
-        '<span>Select Martial Style: </span>' +
-        '<button class="filter-btn" data-lang="csharp">🗡️ C# (.NET)</button>' +
-        '<button class="filter-btn" data-lang="javascript">⚡ JavaScript</button>' +
-        '<button class="filter-btn" data-lang="css">🌊 CSS</button>' +
-    '</div>' +
-    '<table class="temple-table">' +
-        '<thead>' +
-            '<tr>' +
-                '<th>Rank</th>' +
-                '<th>Scroll (Project)</th>' +
-                '<th>Master (Creator)</th>' +
-                '<th>Style</th>' +
-                '<th>Mastery (⭐ Stars)</th>' +
-            '<tr>' +
-        '</thead>' +
-        '<tbody id="leaderboard-rows">' +
-            '<tr><td colspan="5">⏳ The Falcon is fetching live rankings from GitHub...</td></tr>' +
-        '</tbody' +
-    '</table>';
-    
-    // STEP B: Enable clicking on the 3 filter buttons above the table
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const selectedLang = btn.getAttribute('data-lang');
-            loadGitHubLeaderboard(selectedLang);
-        });
-    });
-
-    // STEP C: Construct the GitHub API address and send out the Falcon (fetch)
-    const githubUrl = 'https://api.github.com/search/repositories?q=language:' + language + '&sort=stars&order=desc&per_page=20';
-
-    fetch(githubUrl)
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('leaderboard-rows');
-            tableBody.innerHTML = '';
-
-            // STEP D: Iterate through the list (data.items) and create a <tr> row for each project
-            data.items.forEach((repo, index) => {
-                const rank = index + 1;
-                const row = document.createElement('tr');
-
-                row.innerHTML = 
-                    '<td>#' + rank + '</td>' +
-                    '<td><a class="table-link" href="' + repo.html_url + '" target="_blank"><strong>' + repo.name + '</strong></a></td>' +
-                    '<td><a class="table-link" href="' + repo.owner.html_url + '" target="_blank">' + repo.owner.login + '</a></td>' +
-                    '<td>' + repo.language + '</td>' +
-                    '<td>⭐' + repo.stargazers_count + '</td>';
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => {
-            console.error("GitHub Falcon error:", error);
-        });
-}
 

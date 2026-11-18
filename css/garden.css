@@ -236,7 +236,7 @@
 }
 
 .table-link:hover {
-    color: var(--gold-ornaments)
+    color: var(--gold-ornaments);
 }
 
 /* Box that displays the executed SQL command */
@@ -248,4 +248,95 @@
     font-family: monospace;
     font-size: 0.9rem;
     color: #a8ff60;
+}
+
+/* ==========================================================================
+   ZGRIBA ECOSYSTEM PORTALS (Inside Hall of Scrolls)
+   ========================================================================== */
+.ecosystem-section {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.ecosystem-heading {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.ecosystem-portals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.realm-card {
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid var(--gold-ornaments);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.realm-card h4 {
+    font-family: var(--font-title);
+    color: var(--gold-ornaments);
+    font-size: 1.05rem;
+}
+
+.realm-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.realm-action {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.portal-link-btn, .portal-code-btn {
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* The main red-and-gold button for entering the live site */
+.portal-link-btn {
+    background: var(--traditional-red);
+    color: aliceblue;
+    border: 1px solid var(--gold-ornaments);
+}
+
+.portal-link-btn:hover {
+    background: var(--gold-ornaments);
+    color: var(--black-Kasagi);
+}
+
+/* Secondary button for inspecting the code on GitHub */
+.portal-code-btn {
+    background: rgba(22, 22, 24, 0.9);
+    color: var(--gold-ornaments);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.portal-code-btn:hover {
+    border-color: var(--gold-ornaments);
+    background: rgba(212, 175, 55, 0.15);
+}
+
+@media (max-width: 650px) {
+    .ecosystem-portals {
+        grid-template-columns: 1fr;
+    }
 }

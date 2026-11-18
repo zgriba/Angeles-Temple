@@ -1,0 +1,111 @@
+<!-- 3D interior of the Building of Sacred Documents (Hall of Scrolls – Cang Jing Ge) -->
+<div id="scrolls-interior" class="scrolls-interior">
+    <!-- 1. LIBRARY TOP NAVIGATION BAR -->
+    <nav class="dojo-top-bar scrolls-top-bar">
+        <button id="btn-leave-scrolls" class="chamber-back-btn">&larr; Garden</button>
+
+        <!-- The Switch for the Library's 2 Wings -->
+        <div class="scrolls-wing-switcher">
+            <button id="btn-wing-imperial" class="wing-btn active-wing">🏮 Zgriba Imperial Archive</button>
+            <button id="btn-wing-world" class="wing-btn">🌍 World Master Registry</button>
+        </div>
+
+        <h2 id="scrolls-hall-title" class="dojo-floor-heading">📜 CANG JING GE: HALL OF SCROLLS</h2>
+    </nav>
+
+    <!-- 2. 3D SCENE OF THE LIBRARY (Back Wall + 3D Floor + Scroll on the Floor) -->
+    <div class="dojo-hall-scene">
+
+        <!-- The Back Wall of the Library -->
+        <div class="scrolls-back-wall">
+
+            <!-- WING 1: THE 3 GREAT IMPERIAL SCROLLS (Kakejiku of the Zgriba Universe) -->
+            <div id="imperial-scrolls-wing" class="imperial-scrolls-container">
+
+                <!-- SCROLL I: ANGELES TEMPLE -->
+                <article class="kakejiku-scroll" data-story="Scroll I - Angeles Temple: The 36 Chambers Fullstack Pagoda. Built with 3D CSS perspective, SVG art, relational SQL & Shen Long live code telemetry.">
+                    <div class="kakejiku-roller-top"></div>
+                    <div class="kakejiku-body">
+                        <span class="scroll-seal">SCROLL I</span>
+                        <h3>⛩️ ANGELES TEMPLE</h3>
+                        <p class="scroll-subtitle">The 36th Chamber of Code</p>
+                        <p class="scroll-tech">HTML • CSS3 • JS • SQL • C#</p>
+                        <div class="scroll-actions">
+                            <a href="https://zgriba.github.io/Angeles-Temple/" target="_blank" class="portal-link-btn">🌐 Live Temple</a>
+                            <a href="https://github.com/zgriba/Angeles-Temple" target="_blank" class="portal-code-btn">📜 Sacred Code</a>
+                        </div>
+                    </div>
+                    <div class="kakejiku-roller-bottom"></div>
+                </article>
+
+                <!-- SCROLL II: QUARTIER SOCIETY -->
+                <article class="kakejiku-scroll" data-story="Scroll II - Quartier Society: A 7-District Digital Metropolis uniting Yoga Sanctuary, Sensei Deep Focus, Off-Road Telemetry, and the 7-Day Iron Train Clan protocol.">
+                    <div class="kakejiku-roller-top"></div>
+                    <div class="kakejiku-body">
+                        <span class="scroll-seal">SCROLL II</span>
+                        <h3>🏙️ QUARTIER SOCIETY</h3> 
+                        <p class="scroll-subtitle">The 7-District Metropolis</p>
+                        <p class="scroll-tech">Bento Grid • Glassmorphism • PWA • Audio HUD</p>
+                        <div class="scroll-actions">
+                            <a href="https://zgriba.github.io/Quartier-Society/" target="_blank" class="portal-link-btn">🌐 Enter Metropolis</a>
+                            <a href="https://github.com/zgriba/Quartier-Society" target="_blank" class="portal-code-btn">📜 Sacred Code</a>
+                        </div>
+                    </div>
+                    <div class="kakejiku-roller-bottom"></div>
+                </article>
+
+                <!-- SCROLL III: FINANCE SENSEI -->
+                <article class="kakejiku-scroll" data-story="Scroll III — Finance Sensei (Jin Ku Protocol): A 3-Phase financial mastery system for tracking expenses, optimizing habits, and guiding intelligent investments.">
+                    <div class="kakejiku-roller-top"></div>
+                    <div class="kakejiku-body">
+                        <span class="scroll-seal">SCROLL III</span>
+                        <h3>🪙 FINANCE SENSEI</h3>
+                        <p class="scroll-subtitle">The Jin Ku Wealth Protocol</p>
+                        <p class="scroll-tech">JS Logic • SQLite • GROUP BY &amp; JOIN</p>
+                        <div class="scroll-actions">
+                            <a href="https://zgriba.github.io/Finance-Sensei/frontend/" target="_blank" class="portal-link-btn">🌐 Open Treasury</a>
+                            <a href="https://github.com/zgriba/Finance-Sensei" target="_blank" class="portal-code-btn">📜 Sacred Code</a>
+                        </div>
+                    </div>   
+                    <div class="kakejiku-roller-bottom"></div>
+                </article>
+
+            </div>
+            <!-- WING 2: GITHUB GLOBAL RANKING (Hidden using .hidden until we switch to Wing 2!) -->
+            <div id="world-registry-wing" class="world-registry-panel hidden">
+                <div class="table-controls">
+                    <span>Select Martial Style: </span>
+                    <button class="filter-btn" data-lang="csharp">🗡️ C# (.NET)</button>
+                    <button class="filter-btn" data-lang="javascript">⚡ JavaScript</button>
+                    <button class="filter-btn" data-lang="css">🌊 CSS</button>
+                </div>
+                <table class="temple-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Scroll (Project)</th>
+                            <th>Master (Creator)</th>
+                            <th>Style</th>
+                            <th>Mastery (⭐ Stars)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-rows">
+                        <tr><td colspan="5">⏳ Shen Ying is fetching live rankings from GitHub...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- The Library's 3D Floor -->
+        <div class="scrolls-floor"></div>
+
+        <!-- Sensei’s Scroll on the Floor (tells the story of each project on hover!) -->
+        <div class="sensei-floor-scroll">
+            <span class="sensei-seal">📜 KEEPER</span>
+            <p id="scrolls-sensei-text">WELCOME to CANG Jing Ge, the Sacred Library. Hover over any Imperial Scroll to read its chronicle, or switch wings above.</p>   
+        </div>
+
+    </div>
+    
+</div>
